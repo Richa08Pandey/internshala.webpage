@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Data Display</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      width: 800px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Student Data</h2>
+    <table id="studentTable">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Grade</th>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    var students = [
+      { name: 'Raju', age: 18, grade: 'A' },
+      { name: 'Mohan', age: 17, grade: 'B' },
+      { name: 'Ramesh', age: 19, grade: 'A+' },
+      { name: 'Akhilesh', age: 18, grade: 'B+' },
+      { name: 'Akansh', age: 17, grade: 'A-' }
+    ];
+    
+    var table = document.getElementById('studentTable');
+    
+    students.forEach(function(student) {
+      var row = document.createElement('tr');
+      
+      var nameCell = document.createElement('td');
+      nameCell.textContent = student.name;
+      row.appendChild(nameCell);
+      
+      var ageCell = document.createElement('td');
+      ageCell.textContent = student.age;
+      row.appendChild(ageCell);
+      
+      var gradeCell = document.createElement('td');
+      gradeCell.textContent = student.grade;
+      row.appendChild(gradeCell);
+      
+      table.appendChild(row);
+    });
+  </script>
+</body>
+</html>

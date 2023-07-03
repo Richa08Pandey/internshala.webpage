@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      width: 300px;
+      margin: 100px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    h2 {
+      text-align: center;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    
+    .btn {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 16px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 3px;
+    }
+    
+    .btn:hover {
+      background-color: #45a049;
+    }
+    
+    .error {
+      color: red;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn">Login</button>
+      </div>
+      <div id="errorMessage" class="error"></div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      
+      // Here, you can perform your login logic using JavaScript
+      
+      if (username === 'admin' && password === 'password') {
+        // Successful login
+        alert('Login successful');
+      } else {
+        // Failed login
+        document.getElementById('errorMessage').textContent = 'Invalid username or password';
+      }
+    });
+  </script>
+</body>
+</html>
